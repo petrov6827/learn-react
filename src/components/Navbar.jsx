@@ -2,11 +2,19 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <div>
-      <div class="nav">Контакты</div>
-      <div class="nav">Моя страница</div>
-      <div class="nav">Черный список</div>
-      <div class="nav">Сообщества</div>
+    <div className="nav">
+      <div className="nav__item">
+        <a>Моя страница</a>
+      </div>
+      <div className="nav__item">
+        <a>Контакты</a>
+      </div>
+      <div className="nav__item">
+        <a>Черный список</a>
+      </div>
+      <div className="nav__item">
+        <a>Сообщества</a>
+      </div>
     </div>
   );
 };
