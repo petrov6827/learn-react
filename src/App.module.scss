@@ -1,0 +1,42 @@
+.header {
+  grid-area: h;
+  height: 50px;
+  background: green;
+  display: block;
+}
+
+.nav {
+  grid-area: n;
+}
+
+.main {
+  grid-area: m;
+}
+
+.app-wrapper {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 4fr 10fr;
+  text-align: left;
+  font-size: 18px;
+  grid-template-areas:
+    'h h'
+    'n m';
+}
+.nav__item {
+  background: rgb(82, 78, 78);
+  color: white;
+  padding: 10px;
+  border-bottom: 1px solid white;
+}
+.main__item {
+  background-color: rgb(189, 130, 130);
+  color: white;
+}
+.active {
+  color: yellowgreen;
+}
+
+.black {
+  background: black;
+}

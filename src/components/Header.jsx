@@ -1,11 +1,8 @@
 import React from 'react';
+import s from '../App.module.scss';
 
 const Header = () => {
-  return (
-    <div>
-      <img src="https://24betting.ru/bitrix/templates/24hnew/img/IMG-SPORT.jpg" />
-    </div>
-  );
+  return <div className={`${s.header}`}>1</div>;
 };
 
 export default Header;

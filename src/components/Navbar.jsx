@@ -1,19 +1,20 @@
 import React from 'react';
+import s from '../App.module.scss';
 
 const Navbar = () => {
   return (
     <div className="nav">
-      <div className="nav__item">
+      <div className={`${s.nav__item}`}>
         <a>Моя страница</a>
       </div>
-      <div className="nav__item">
-        <a>Контакты</a>
+      <div className={`${s.nav__item} ${s.active}`}>
+        <a>Сообщения</a>
       </div>
       <div className="nav__item">
-        <a>Черный список</a>
+        <a>Друзья</a>
       </div>
       <div className="nav__item">
-        <a>Сообщества</a>
+        <a>Настройки</a>
       </div>
     </div>
   );
