@@ -1,5 +1,5 @@
 import React from 'react';
-import s from '../../App.module.scss';
+import s from './Header.module.scss';
 
 const Header = () => {
   return <div className={`${s.header}`}>Спортивная соц сеть</div>;

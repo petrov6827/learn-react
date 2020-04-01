@@ -1,23 +1,19 @@
-@import './Modules/Header.module.scss';
-@import './Modules/Navbar.module.scss';
-@import './Modules/Profile.module.scss';
-@import './Modules/Post.module.scss';
-
 .header {
   grid-area: h;
-}
-.profile {
-  grid-area: m;
-  min-height: 100%;
 }
 .nav {
   grid-area: n;
   height: minmax(300px auto);
   float: left;
 }
-.app-wrapper {
+.profile {
+  grid-area: m;
+  min-height: 100%;
+}
+
+.app {
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 70px 1fr;
   grid-template-columns: 250px 5fr;
   text-align: left;
   font-size: 18px;

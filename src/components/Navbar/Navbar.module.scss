@@ -9,3 +9,12 @@
   padding: 10px;
   border-bottom: 1px solid white;
 }
+
+.nav__item a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav__item a.active {
+  color: yellowgreen;
+}
