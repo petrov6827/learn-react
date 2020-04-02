@@ -1,6 +1,7 @@
 .nav {
   grid-area: n;
   width: 250px;
+  color: white;
 }
 
 .nav__item {
@@ -9,12 +10,15 @@
   padding: 10px;
   border-bottom: 1px solid white;
 }
-
-.nav__item a {
-  color: white;
+.links {
   text-decoration: none;
+  color: white;
 }
 
-.nav__item a.active {
+.active {
   color: yellowgreen;
+}
+
+.settings {
+  color: orange;
 }

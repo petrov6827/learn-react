@@ -3,3 +3,21 @@
   color: white;
   padding: 5px 10px;
 }
+
+.d__content {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.d__items,
+.message {
+  padding: 10px;
+}
+
+.d__friends .active {
+  color: yellowgreen;
+}
+
+.d__friends {
+  border-right: 1px solid white;
+}

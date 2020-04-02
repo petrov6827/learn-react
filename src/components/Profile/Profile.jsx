@@ -8,7 +8,7 @@ const Profile = () => {
       <div className={s.profile__item}>
         <img src="https://u.kanobu.ru/editor/images/67/6e2c058c-9d16-4fa3-aa90-83d96e374170.jpg" />
       </div>
-      <div className={`${s.profile__item}`}>
+      <div className={s.profile__item}>
         <MyPosts />
       </div>
     </div>
