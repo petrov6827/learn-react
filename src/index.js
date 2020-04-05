@@ -4,7 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let posts = [
+  { id: 1, message: 'Hi, how r u? ', likesCount: '20' },
+  { id: 2, message: "It's my second post", likesCount: '5' },
+  { id: 3, message: 'What sports do u like more? ', likesCount: '2' },
+];
+
+ReactDOM.render(<App posts={posts} />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

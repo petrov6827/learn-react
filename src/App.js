@@ -6,21 +6,21 @@ import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 import Friends from './components/Friends/Friends';
 import Settings from './components/Settings/Settings';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-function App() {
+const App = (props) => {
   return (
     <Router>
       <div className={s.app}>
         <Header />
         <Navbar />
-        <Route path="/Profile" component={Profile} />
-        <Route path="/Dialogs" component={Dialogs} />
-        <Route path="/Friends" component={Friends} />
-        <Route path="/Settings" component={Settings} />
+        <Route path="/Profile" render={() => <Profile posts={props.posts} />} />
+        <Route path="/Dialogs" render={() => <Dialogs />} />
+        <Route path="/Friends" render={() => <Friends />} />
+        <Route path="/Settings" render={() => <Settings />} />
       </div>
     </Router>
   );
-}
+};
 
 export default App;

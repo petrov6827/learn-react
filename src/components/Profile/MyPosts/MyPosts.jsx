@@ -1,20 +1,24 @@
 import React from 'react';
 import s from './MyPosts.module.scss';
 import Post from './Post/Post';
+import PostSend from './PostSend/PostSend';
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+  let posts = [
+    { id: 1, message: 'Hi, how r u? ', likesCount: '20' },
+    { id: 2, message: "It's my second post", likesCount: '5' },
+    { id: 3, message: 'What sports do u like more? ', likesCount: '2' },
+  ];
+
+  let postsElements = posts.map((p) => (
+    <Post message={p.message} likesCount={p.likesCount} />
+  ));
+
   return (
     <div className={s.myposts}>
       <h1>Мои посты</h1>
-      <div>
-        <textarea cols="40" rows="2" className={s.area__input}></textarea>
-        <button className={s.post__send}>Добавить пост</button>
-      </div>
-      <div>
-        <Post message="Hi, how r u? " likesCount="20" />
-        <Post message="It's my first post " likesCount="5" />
-        <Post message="Third message " likesCount="2" />
-      </div>
+      <PostSend />
+      <div>{postsElements}</div>
     </div>
   );
 };
