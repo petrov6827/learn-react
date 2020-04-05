@@ -15,7 +15,12 @@ const App = (props) => {
         <Header />
         <Navbar />
         <Route path="/Profile" render={() => <Profile posts={props.posts} />} />
-        <Route path="/Dialogs" render={() => <Dialogs />} />
+        <Route
+          path="/Dialogs"
+          render={() => (
+            <Dialogs dialogs={props.dialogs} messages={props.messages} />
+          )}
+        />
         <Route path="/Friends" render={() => <Friends />} />
         <Route path="/Settings" render={() => <Settings />} />
       </div>
