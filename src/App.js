@@ -16,11 +16,11 @@ const App = (props) => {
         <Navbar />
         <Route
           path="/Profile"
-          render={() => <Profile state={props.state.profilePage} />}
+          render={() => <Profile state={props.profilePage} />}
         />
         <Route
           path="/Dialogs"
-          render={() => <Dialogs state={props.state.dialogsPage} />}
+          render={() => <Dialogs state={props.dialogsPage} />}
         />
         <Route path="/Friends" render={() => <Friends />} />
         <Route path="/Settings" render={() => <Settings />} />
