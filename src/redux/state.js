@@ -6,6 +6,7 @@ let state = {
       { id: 3, message: 'What sports do u like more? ', likesCount: '2' },
     ],
   },
+
   dialogsPage: {
     messages: [
       { id: 1, message: 'Привет пошли на футбол' },
@@ -22,6 +23,16 @@ let state = {
       { id: 6, name: 'Борис борцуха' },
     ],
   },
+};
+
+export let addPost = (postMessage) => {
+  let newPost = {
+    id: 5,
+    message: postMessage,
+    likesCount: 0,
+  };
+
+  state.profilePage.posts.push(newPost);
 };
 
 export default state;

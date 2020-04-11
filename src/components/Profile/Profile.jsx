@@ -3,7 +3,6 @@ import s from './Profile.module.scss';
 import MyPosts from './MyPosts/MyPosts';
 
 const Profile = (props) => {
-  debugger;
   return (
     <div className={s.profile}>
       <div className={s.profile__item}>
@@ -13,7 +12,7 @@ const Profile = (props) => {
         />
       </div>
       <div className={s.profile__item}>
-        <MyPosts props={props.state.posts} />
+        <MyPosts posts={props.state.posts} addPost={props.addPost} />
       </div>
     </div>
   );

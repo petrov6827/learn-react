@@ -15,12 +15,15 @@ const App = (props) => {
         <Header />
         <Navbar />
         <Route
+          className={s.links}
           path="/Profile"
-          render={() => <Profile state={props.profilePage} />}
+          render={() => (
+            <Profile state={props.state.profilePage} addPost={props.addPost} />
+          )}
         />
         <Route
           path="/Dialogs"
-          render={() => <Dialogs state={props.dialogsPage} />}
+          render={() => <Dialogs state={props.state.dialogsPage} />}
         />
         <Route path="/Friends" render={() => <Friends />} />
         <Route path="/Settings" render={() => <Settings />} />
