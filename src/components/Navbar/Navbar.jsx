@@ -6,12 +6,12 @@ const Navbar = () => {
   return (
     <div className={`${s.nav}`}>
       <div className={s.nav__item}>
-        <NavLink to="/Profile" ClassName={s.links} activeClassName={s.active}>
+        <NavLink to="/Profile" className={s.links} activeClassName={s.active}>
           Моя страница
         </NavLink>
       </div>
       <div className={`${s.nav__item}`}>
-        <NavLink to="/Dialogs" ClassName={s.links} activeClassName={s.active}>
+        <NavLink to="/Dialogs" className={s.links} activeClassName={s.active}>
           Сообщения
         </NavLink>
       </div>
