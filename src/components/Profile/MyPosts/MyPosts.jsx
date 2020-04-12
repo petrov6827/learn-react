@@ -30,7 +30,7 @@ const MyPosts = (props) => {
           rows="2"
           className={s.area__input}
         />
-        <button onclick={addPost} className={s.post__send}>
+        <button onClick={addPost} className={s.post__send}>
           Добавить пост
         </button>
       </div>

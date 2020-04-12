@@ -40,7 +40,7 @@ export const addPost = () => {
   };
   state.profilePage.posts.push(newPost);
   state.profilePage.newPostText = '';
-  rerenderEntireTree(state);
+  rerenderEntireTree();
 };
 
 export const updateNewPostText = (newText) => {
@@ -51,4 +51,5 @@ export const updateNewPostText = (newText) => {
 export const subscribe = (observer) => {
   rerenderEntireTree = observer;
 };
+
 export default state;
