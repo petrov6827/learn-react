@@ -38,7 +38,7 @@ const Dialogs = (props) => {
                 rows="2"
                 placeholder="enter your message"
                 className="s.area__input"
-                value={newMessageBody}
+                value={props.newMessageBody}
                 onChange={onNewMessageChange}
               ></textarea>
             </div>

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
   updateNewMessageBodyCreator,
   sendMessageCreator,
@@ -10,15 +8,16 @@ import { connect } from 'react-redux';
 let mapStateToProps = (state) => {
   return {
     dialogsPage: state.dialogsPage,
+    newMessageBody: state.dialogsPage.newMessageBody,
   };
 };
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    updateNewMessageBody: () => {
+    sendMessage: () => {
       dispatch(sendMessageCreator());
     },
-    sendMessage: (body) => {
+    updateNewMessageBody: (body) => {
       dispatch(updateNewMessageBodyCreator(body));
     },
   };
