@@ -25,10 +25,10 @@ const MyPosts = (props) => {
         <textarea
           onChange={onPostChange}
           ref={newPostElement}
-          value={props.newPostText}
           cols="40"
           rows="2"
           className={s.area__input}
+          value={props.newPostText}
         />
         <button onClick={onAddPost} className={s.post__send}>
           Добавить пост
