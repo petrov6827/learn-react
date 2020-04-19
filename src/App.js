@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import Friends from './components/Friends/Friends';
+import Users from './components/Users/Users';
 import Settings from './components/Settings/Settings';
 import { Route } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ const App = (props) => {
         path="/Dialogs"
         render={() => <DialogsContainer store={props.store} />}
       />
-      <Route path="/Friends" render={() => <Friends />} />
+      <Route path="/Users" render={() => <Users />} />
       <Route path="/Settings" render={() => <Settings />} />
     </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
-import s from './Friends.module.scss';
+import s from './Users.module.scss';
 
-const Friends = () => {
+const Users = (props) => {
   return (
     <div className={s.friends}>
       <h1>Мои друзья</h1>
@@ -9,4 +9,4 @@ const Friends = () => {
   );
 };
 
-export default Friends;
+export default Users;
