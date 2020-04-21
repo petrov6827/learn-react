@@ -2,38 +2,6 @@ const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
-let initialState = {
-  users: [
-    {
-      id: 1,
-      photoUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Dmitry_Nagiev_2017_4.jpg/274px-Dmitry_Nagiev_2017_4.jpg',
-      followed: false,
-      fullname: 'Dmitry',
-      status: 'Я босс',
-      location: { city: 'Moscow', country: 'Belarus' },
-    },
-    {
-      id: 2,
-      photoUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Dmitry_Nagiev_2017_4.jpg/274px-Dmitry_Nagiev_2017_4.jpg',
-      followed: true,
-      fullname: 'Sasha',
-      status: 'Я тоже босс',
-      location: { city: 'Minsk', country: 'Russia' },
-    },
-    {
-      id: 3,
-      photoUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Dmitry_Nagiev_2017_4.jpg/274px-Dmitry_Nagiev_2017_4.jpg',
-      followed: false,
-      fullname: 'Anton',
-      status: 'Я не босс',
-      location: { city: 'Kiev', country: 'Ukraine' },
-    },
-  ],
-};
-
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case FOLLOW:
