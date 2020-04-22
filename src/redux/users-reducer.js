@@ -2,6 +2,10 @@ const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
+let initialState = {
+  users: [],
+};
+
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case FOLLOW:
@@ -35,7 +39,6 @@ const usersReducer = (state = initialState, action) => {
   }
 };
 
-let userId;
 export const followAC = (userId) => ({ type: FOLLOW, userId });
 export const unfollowAC = (userId) => ({ type: UNFOLLOW, userId });
 export const setUsersAC = (users) => ({ type: SET_USERS, users });
