@@ -12,7 +12,8 @@
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
-  margin: 0;
+  margin: 0 auto;
+  margin-left: 15px;
 }
 
 .getUsers {
@@ -22,4 +23,27 @@
   border-radius: 5px;
   font-size: 16px;
   margin-bottom: 20px;
+}
+
+.user__item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.about {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.pages {
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+.pages__item {
+  margin-left: 10px;
+}
+
+.selectedPage {
+  font-weight: bold;
 }
