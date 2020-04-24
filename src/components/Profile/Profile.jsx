@@ -7,10 +7,7 @@ const Profile = (props) => {
   return (
     <div className={s.profile}>
       <div className={s.profile__item}>
-        <img
-          alt="картинка"
-          src="https://u.kanobu.ru/editor/images/67/6e2c058c-9d16-4fa3-aa90-83d96e374170.jpg"
-        />
+        <img alt="" src="" />
       </div>
       <div className={s.profile__item}>
         <MyPostsContainer
