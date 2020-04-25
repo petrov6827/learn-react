@@ -22,10 +22,24 @@
   border-right: 1px solid white;
 }
 
-.area__input {
-  font-size: 20px;
+.input {
+  font-size: 16px;
   line-height: 22px;
   padding: 10px;
   border-radius: 5px;
+  margin: 10px;
+  border: none;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.sendMessage {
+  margin: 10px;
+  vertical-align: top;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
   margin-bottom: 20px;
+  display: flex;
+  justify-self: end;
 }

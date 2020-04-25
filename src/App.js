@@ -15,18 +15,18 @@ const App = (props) => {
       <Navbar />
       <Route
         className={s.links}
-        path="/Profile"
+        path="/profile"
         render={() => <Profile store={props.store} />}
       />
       <Route
-        path="/Dialogs"
+        path="/dialogs"
         render={() => <DialogsContainer store={props.store} />}
       />
       <Route
-        path="/Users"
+        path="/users"
         render={() => <UsersContainer store={props.store} />}
       />
-      <Route path="/Settings" render={() => <Settings />} />
+      <Route path="/settings" render={() => <Settings />} />
     </div>
   );
 };

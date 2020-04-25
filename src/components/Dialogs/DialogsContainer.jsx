@@ -18,14 +18,12 @@ let mapDispatchToProps = (dispatch) => {
       dispatch(sendMessageCreator());
     },
     updateNewMessageBody: (body) => {
-      dispatch(updateNewMessageBodyCreator(body));
+      let action = updateNewMessageBodyCreator(body);
+      dispatch(action);
     },
   };
 };
 
-const superDialogsContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Dialogs);
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
-export default superDialogsContainer;
+export default DialogsContainer;

@@ -23,6 +23,7 @@ const MyPosts = (props) => {
       <h1>Мои посты</h1>
       <div>
         <textarea
+          placeholder="Круто провел лето"
           onChange={onPostChange}
           ref={newPostElement}
           cols="40"
