@@ -1,21 +1,19 @@
 import React from 'react';
 import s from './Profile.module.scss';
-// import MyPosts from './MyPosts/MyPosts';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
+import Loader from '../Users/Loader';
 
 const Profile = (props) => {
+  if (!props.profile) {
+    return <Loader />;
+  }
   return (
     <div className={s.profile}>
       <div className={s.profile__item}>
-        <img alt="" src="" />
+        <img alt="аватарка" src={props.profile.photos.large} />
       </div>
       <div className={s.profile__item}>
-        <MyPostsContainer
-          store={props.store}
-          // posts={props.profilePage.posts}
-          // dispatch={props.dispatch}
-          // newPostText={props.profilePage.newPostText}
-        />
+        <MyPostsContainer />
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import Post from './Post/Post';
 
 const MyPosts = (props) => {
   let postsElements = props.posts.map((p) => (
-    <Post message={p.message} likesCount={p.likesCount} />
+    <Post message={p.message} likesCount={p.likesCount} key={p.id} />
   ));
 
   let newPostElement = React.createRef();
@@ -23,7 +23,6 @@ const MyPosts = (props) => {
       <h1>Мои посты</h1>
       <div>
         <textarea
-          placeholder="Круто провел лето"
           onChange={onPostChange}
           ref={newPostElement}
           cols="40"
