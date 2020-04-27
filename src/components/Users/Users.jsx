@@ -48,6 +48,9 @@ let Users = (props) => {
                           `https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
                           {
                             withCredentials: true,
+                            headers: {
+                              'API-KEY': '4ab334bc-c44a-4a21-a3c6-08016163f3f7',
+                            },
                           }
                         )
                         .then((response) => {
