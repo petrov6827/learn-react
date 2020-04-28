@@ -7,6 +7,7 @@ import {
   setCurrentPage,
   setTotalUsersCount,
   toggleIsFetching,
+  toggleFollowingProgress,
 } from '../../redux/users-reducer';
 import Users from './Users';
 import Loader from './Loader';
