@@ -48,6 +48,7 @@ class UsersContainer extends React.Component {
           onPageChanged={this.onPageChanged}
           follow={this.follow}
           unfollow={this.unfollow}
+          toggleFollowingProgress={this.props.toggleFollowingProgress}
         />
       </>
     );
@@ -61,6 +62,7 @@ let mapStateToProps = (state) => {
     totalUsersCount: state.usersPage.totalUsersCount,
     currentPage: state.usersPage.currentPage,
     isFetching: state.usersPage.isFetching,
+    followingInProgress: state.followingInProgress,
   };
 };
 
@@ -71,4 +73,5 @@ export default connect(mapStateToProps, {
   setCurrentPage,
   setTotalUsersCount,
   toggleIsFetching,
+  toggleFollowingProgress,
 })(UsersContainer);
