@@ -16,4 +16,11 @@ export const usersAPI = {
         return response.data;
       });
   },
+  follow(userId) {
+    return instanse.post(`follow/${userId}`, {});
+  },
+
+  unfollow(userId) {
+    return instanse.delete(`follow/${userId}`);
+  },
 };
