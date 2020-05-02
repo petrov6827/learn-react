@@ -4,9 +4,6 @@ import MyPostsContainer from './MyPosts/MyPostsContainer';
 import Loader from '../Users/Loader';
 
 const Profile = (props) => {
-  if (!props.profile) {
-    return <Loader />;
-  }
   return (
     <div className={s.profile}>
       <div className={s.profile__item}>
