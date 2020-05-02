@@ -2,9 +2,6 @@ import React from 'react';
 import userPhoto from '../../../src/assets/images/user.png';
 import s from './Users.module.scss';
 import { NavLink } from 'react-router-dom';
-import * as axios from 'axios';
-import { usersAPI } from '../api/api';
-import toggleFollowingProgress from '../../redux/users-reducer';
 
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -41,7 +38,6 @@ let Users = (props) => {
                   alt="аватарка"
                 />
               </NavLink>
-              debugger;
               <div>
                 {u.followed ? (
                   <button

@@ -91,9 +91,7 @@ export const toggleFollowingProgress = (isFetching, userId) => ({
   isFetching,
   userId,
 });
-
 export const getUsers = (currentPage, pageSize) => {
-  //Thunk
   return (dispatch) => {
     dispatch(toggleIsFetching(true));
 
@@ -104,11 +102,10 @@ export const getUsers = (currentPage, pageSize) => {
     });
   };
 };
-
 export const follow = (userId) => {
   return (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId));
-    usersAPI.unfollow(userId).then((response) => {
+    usersAPI.follow(userId).then((response) => {
       if (response.data.resultCode === 0) {
         dispatch(followSucces(userId));
       }
@@ -116,11 +113,10 @@ export const follow = (userId) => {
     });
   };
 };
-
 export const unfollow = (userId) => {
   return (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId));
-    usersAPI.follow(userId).then((response) => {
+    usersAPI.unfollow(userId).then((response) => {
       if (response.data.resultCode === 0) {
         dispatch(unfollowSucces(userId));
       }
@@ -128,5 +124,4 @@ export const unfollow = (userId) => {
     });
   };
 };
-
 export default usersReducer;
