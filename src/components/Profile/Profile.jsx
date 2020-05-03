@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './Profile.module.scss';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
-import Loader from '../Users/Loader';
 
 const Profile = (props) => {
   return (
