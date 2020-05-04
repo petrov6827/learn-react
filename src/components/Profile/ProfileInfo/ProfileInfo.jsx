@@ -9,7 +9,7 @@ const ProfileInfo = (props) => {
   //   }
   return (
     <div>
-      <div className={s.profile__status}>
+      <div className={s.profile__info}>
         <ProfileStatus status={'Status is here!'} />
       </div>
     </div>
