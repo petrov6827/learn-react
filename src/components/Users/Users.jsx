@@ -66,6 +66,8 @@ let Users = (props) => {
             </div>
 
             <div className={s.about}>{u.name}</div>
+            <div className={s.about}>{u.status}</div>
+            <div className={s.about}>{u.photos.small}</div>
           </div>
         ))}
       </div>

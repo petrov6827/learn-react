@@ -8,10 +8,9 @@ const ProfileInfo = (props) => {
   //     return <Loader />;
   //   }
   return (
-    <div>
-      <div className={s.profile__info}>
-        <ProfileStatus status={'Status is here!'} />
-      </div>
+    <div className={s.profile__info}>
+      {/* <img alt="аватарка" src={props.profile.photos.large} /> */}
+      <ProfileStatus status={'Sam sam Sam'} updateStatus={props.updateStatus} />
     </div>
   );
 };

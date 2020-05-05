@@ -9,10 +9,12 @@ const Profile = (props) => {
       {/* <div className={s.profile__item}>
         <img alt="аватарка" src={props.profile.photos.large} />
       </div> */}
-      <div>
-        <ProfileInfo />
-      </div>
       <div className={s.profile__item}>
+        <ProfileInfo
+          profile={props.profile}
+          status={props.status}
+          updateStatus={props.updateStatus}
+        />
         <MyPostsContainer />
       </div>
     </div>
