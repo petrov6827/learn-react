@@ -1,25 +1,36 @@
 import React from 'react';
 import s from './login.module.scss';
-import { Form, reduxForm, Field } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 
 const LoginForm = (props) => {
-  const { handleSubmit } = props;
   return (
-    <form onSubmit={handleSubmit} className={s.form}>
+    <form onSubmit={props.handleSubmit} className={s.form}>
       <div>
-        <label htmlFor="login">Логин</label>
-        <Field name="login" component="input" type="text" />
+        <label htmlFor="login"></label>
+        <Field
+          className={s.item}
+          name="login"
+          placeholder="Login"
+          component="input"
+          type="text"
+        />
       </div>
       <div>
-        <label htmlFor="password">Пароль</label>
-        <Field name="password" component="input" type="text" />
+        <label htmlFor="password"></label>
+        <Field
+          className={s.item}
+          name="password"
+          placeholder="Password"
+          component="input"
+          type="text"
+        />
       </div>
       <div>
-        <label htmlFor="чекбокс">запомнить меня</label>
         <Field name="remember" component="input" type="checkbox" />
+        <label htmlFor="чекбокс">запомнить меня</label>
       </div>
       <div>
-        <button>Войти</button>
+        <button className={s.button}>Войти</button>
       </div>
     </form>
   );
@@ -30,10 +41,14 @@ const LoginReduxForm = reduxForm({
 })(LoginForm);
 
 const Login = (props) => {
+  const onSubmit = (formData) => {
+    console.log(formData);
+  };
+
   return (
     <div className={s.login}>
       <h1>Вход</h1>
-      <LoginReduxForm />
+      <LoginReduxForm onSubmit={onSubmit} />
     </div>
   );
 };
