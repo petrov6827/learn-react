@@ -42,6 +42,7 @@ export const sendMessage = (newMessageBody) => ({
   type: SEND_MESSAGE,
   newMessageBody,
 });
+
 export const updateNewMessageBody = (body) => ({
   type: UPDATE_NEW_POST_TEXT,
   body: body,
