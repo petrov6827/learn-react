@@ -14,6 +14,7 @@ let mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps, {
     sendMessage,
+
     updateNewMessageBody,
   }),
   withAuthRedirect
