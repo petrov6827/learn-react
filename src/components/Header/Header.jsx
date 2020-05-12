@@ -8,7 +8,13 @@ const Header = (props) => {
       Спортивная соц сеть
       <div className={s.login_block}>
         {props.isAuth ? (
-          props.login
+          <div>
+            {props.login} -{' '}
+            <button className={s.button} onClick={props.logout}>
+              {' '}
+              Log out
+            </button>
+          </div>
         ) : (
           <NavLink className={s.white} to={'/login'}>
             Login

@@ -1,11 +1,14 @@
 import React from 'react';
 import s from './login.module.scss';
 import { reduxForm, Field } from 'redux-form';
-import { Textarea, Element } from '../common/FormsControls/FormsControls';
+import { Textarea } from '../common/FormsControls/FormsControls';
 import {
   requiredLogin,
   requiredPassword,
 } from '../../utils/validators/validators';
+import { connect } from 'react-redux';
+import { login } from '../../redux/auth-reducer';
+import { Redirect } from 'react-router-dom';
 
 const LoginForm = (props) => {
   return (
@@ -15,8 +18,8 @@ const LoginForm = (props) => {
         <Field
           className={s.item}
           rows="1"
-          name="login"
-          placeholder="Login"
+          name="email"
+          placeholder="Email"
           component={Textarea}
           type="textarea"
           validate={[requiredLogin]}
@@ -45,14 +48,16 @@ const LoginForm = (props) => {
   );
 };
 
-const LoginReduxForm = reduxForm({
-  form: 'login',
-})(LoginForm);
+const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm);
 
 const Login = (props) => {
   const onSubmit = (formData) => {
-    console.log(formData);
+    props.login(formData.email, formData.Password, formData.rememberMe);
   };
+
+  if (props.isAuth) {
+    return <Redirect to={'/Dialogs'} />;
+  }
 
   return (
     <div className={s.login}>
@@ -62,4 +67,7 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+const mapStateToProps = (state) => ({
+  isAuth: state.auth.isAuth,
+});
+export default connect(mapStateToProps, { login })(Login);
