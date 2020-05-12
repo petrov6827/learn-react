@@ -1,6 +1,11 @@
 import React from 'react';
 import s from './login.module.scss';
 import { reduxForm, Field } from 'redux-form';
+import { Textarea, Element } from '../common/FormsControls/FormsControls';
+import {
+  requiredLogin,
+  requiredPassword,
+} from '../../utils/validators/validators';
 
 const LoginForm = (props) => {
   return (
@@ -9,20 +14,24 @@ const LoginForm = (props) => {
         <label htmlFor="login"></label>
         <Field
           className={s.item}
+          rows="1"
           name="login"
           placeholder="Login"
-          component="input"
-          type="text"
+          component={Textarea}
+          type="textarea"
+          validate={[requiredLogin]}
         />
       </div>
       <div>
         <label htmlFor="password"></label>
         <Field
           className={s.item}
+          rows="1"
           name="password"
           placeholder="Password"
-          component="input"
-          type="text"
+          component={Textarea}
+          type="textarea"
+          validate={[requiredPassword]}
         />
       </div>
       <div>
