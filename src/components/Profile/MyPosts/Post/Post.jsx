@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Post.module.scss';
 
-const Post = (props) => {
+const Post = (props, likesCount) => {
   return (
     <div className={s.post__item}>
       <img
@@ -9,7 +9,7 @@ const Post = (props) => {
         src="https://i.pinimg.com/736x/ce/ff/af/ceffaf6a57c0935cda8d56d4db594d02.jpg"
       />
       {props.message}
-      <span className={s.post__like}>like {props.likesCount}</span>
+      <span className={s.post__like}>{props.likesCount} like</span>
     </div>
   );
 };

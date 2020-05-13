@@ -21,7 +21,7 @@ const LoginForm = (props) => {
           name="email"
           placeholder="Email"
           component={Textarea}
-          type="textarea"
+          type="input"
           validate={[requiredLogin]}
         />
       </div>
@@ -33,7 +33,7 @@ const LoginForm = (props) => {
           name="password"
           placeholder="Password"
           component={Textarea}
-          type="textarea"
+          type="input"
           validate={[requiredPassword]}
         />
       </div>
@@ -41,6 +41,7 @@ const LoginForm = (props) => {
         <Field name="remember" component="input" type="checkbox" />
         <label htmlFor="чекбокс">запомнить меня</label>
       </div>
+      {props.error && <div className={s.form__error}>{props.error}</div>}
       <div>
         <button className={s.button}>Войти</button>
       </div>
@@ -52,11 +53,11 @@ const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm);
 
 const Login = (props) => {
   const onSubmit = (formData) => {
-    props.login(formData.email, formData.Password, formData.rememberMe);
+    props.login(formData.email, formData.password, formData.rememberMe);
   };
 
   if (props.isAuth) {
-    return <Redirect to={'/Dialogs'} />;
+    return <Redirect to={'/profile'} />;
   }
 
   return (
@@ -70,4 +71,5 @@ const Login = (props) => {
 const mapStateToProps = (state) => ({
   isAuth: state.auth.isAuth,
 });
+
 export default connect(mapStateToProps, { login })(Login);
