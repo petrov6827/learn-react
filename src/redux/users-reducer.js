@@ -11,7 +11,7 @@ const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS';
 let initialState = {
   users: [],
   pageSize: 5,
-  totalUsersCount: 40,
+  totalUsersCount: 20,
   currentPage: 1,
   isFetching: true,
   followingInProgress: [],
@@ -91,11 +91,12 @@ export const toggleFollowingProgress = (isFetching, userId) => ({
   isFetching,
   userId,
 });
-export const getUsers = (currentPage, pageSize) => {
+export const requestUsers = (page, pageSize) => {
   return (dispatch) => {
     dispatch(toggleIsFetching(true));
+    dispatch(setCurrentPage(page));
 
-    usersAPI.getUsers(currentPage, pageSize).then((data) => {
+    usersAPI.getUsers(page, pageSize).then((data) => {
       dispatch(toggleIsFetching(false));
       dispatch(setUsers(data.items));
       dispatch(setTotalUsersCount(data.totalCount));
