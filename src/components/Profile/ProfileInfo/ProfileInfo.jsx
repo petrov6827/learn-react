@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './ProfileInfo.module.scss';
-import ProfileStatus from './ProfileStatus';
+// import ProfileStatus from './ProfileStatus';
+import ProfileStatusWithHooks from './ProfileStatus';
 // import Loader from '../../Users/Loader';
 
 const ProfileInfo = (props) => {
@@ -10,7 +11,10 @@ const ProfileInfo = (props) => {
   return (
     <div className={s.profile__info}>
       {/* <img alt="аватарка" src={props.profile.photo.large} /> */}
-      <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+      <ProfileStatusWithHooks
+        status={props.status}
+        updateStatus={props.updateStatus}
+      />
     </div>
   );
 };
