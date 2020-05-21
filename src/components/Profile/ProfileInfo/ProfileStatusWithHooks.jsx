@@ -6,11 +6,6 @@ const ProfileStatusWithHooks = (props) => {
   let [editMode, setEditMode] = useState(false);
   let [status, setStatus] = useState(props.status);
 
-  // useEffect(() => {
-  //   debugger;
-  //   setStatus(props.status);
-  // });
-
   useEffect(() => {
     setStatus(props.status);
   }, [props.status]);
@@ -21,18 +16,18 @@ const ProfileStatusWithHooks = (props) => {
 
   const deactivateEditMode = () => {
     setEditMode(false);
-    props.updateStatus(status);
+    props.updateStatus(status); //callback который передаст статус в пропсы
   };
 
   const onStatusChange = (e) => {
-    setStatus(e.currentTarget.value);
+    setStatus(e.currentTarget.value); //сетаем локальный стейт
   };
 
   return (
     <div>
       {!editMode && (
         <div className={s.profile__status}>
-          <span onClick={activateEditMode}>{status || '-----'}</span>
+          <span onDoubleClick={activateEditMode}>{status || '-----'}</span>
         </div>
       )}
       {editMode && (
