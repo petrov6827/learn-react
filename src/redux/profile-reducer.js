@@ -63,21 +63,20 @@ export const getUserProfile = (userId) => (dispatch) => {
   usersAPI.getProfile(userId).then((response) => {
     dispatch(setUserProfile(response.data));
   });
-};
+}; //thunk
 
 export const getStatus = (userId) => (dispatch) => {
   profileAPI.getStatus(userId).then((response) => {
     dispatch(setStatus(response.data));
   });
-};
+}; //thunk
 
 export const updateStatus = (status) => (dispatch) => {
   profileAPI.updateStatus(status).then((response) => {
-    debugger;
     if (response.data.resultCode === 0) {
       dispatch(setStatus(status));
     }
   });
-};
+}; //thunk
 
 export default profileReducer;
