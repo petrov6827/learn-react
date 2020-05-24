@@ -9,7 +9,7 @@ import {
 } from '../../redux/users-reducer';
 import Users from './Users';
 import Loader from './Loader';
-import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+// import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { compose } from 'redux';
 import {
   getPageSize,
