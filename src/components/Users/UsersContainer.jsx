@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {
-  follow,
-  unfollow,
+  followThunk,
+  unfollowThunk,
   setCurrentPage,
   toggleFollowingProgress,
-  requestUsers,
+  requestUsersThunk,
 } from '../../redux/users-reducer';
 import Users from './Users';
 import Loader from './Loader';
@@ -19,17 +19,16 @@ import {
   getIsFetching,
   getFollowingInProgress,
 } from '../../redux/users-selectors';
+import { withRouter } from 'react-router-dom';
 
 class UsersContainer extends React.Component {
   componentDidMount() {
-    debugger;
-
-    this.props.requestUsers(this.props.currentPage, this.props.pageSize);
+    this.props.requestUsersThunk(this.props.currentPage, this.props.pageSize);
   }
 
-  onPageChanged = (pageNumber) => {
-    this.props.requestUsers(pageNumber, this.props.pageSize);
-    this.props.setCurrentPage(pageNumber);
+  onPageChanged = (page) => {
+    this.props.requestUsersThunk(page, this.props.pageSize);
+    this.props.setCurrentPage(page);
   };
 
   render() {
@@ -42,8 +41,8 @@ class UsersContainer extends React.Component {
           currentPage={this.props.currentPage}
           users={this.props.users}
           onPageChanged={this.props.onPageChanged}
-          follow={this.props.follow}
-          unfollow={this.props.unfollow}
+          followThunk={this.props.followThunk}
+          unfollowThunk={this.props.unfollowThunk}
           followingInProgress={this.props.followingInProgress}
         />
       </>
@@ -53,6 +52,7 @@ class UsersContainer extends React.Component {
 
 let mapStateToProps = (state) => {
   return {
+    profile: state.profilePage.profile,
     users: getUsers(state),
     pageSize: getPageSize(state),
     totalUsersCount: getTotalUsersCount(state),
@@ -65,10 +65,11 @@ let mapStateToProps = (state) => {
 export default compose(
   // withAuthRedirect,
   connect(mapStateToProps, {
-    follow,
-    unfollow,
+    followThunk,
+    unfollowThunk,
     setCurrentPage,
     toggleFollowingProgress,
-    requestUsers,
-  })
+    requestUsersThunk,
+  }),
+  withRouter
 )(UsersContainer);

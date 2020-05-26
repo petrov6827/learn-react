@@ -4,9 +4,9 @@ import s from './Users.module.scss';
 import { NavLink } from 'react-router-dom';
 
 let Users = (props) => {
-  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+  const pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
-  let pages = [];
+  const pages = [];
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
@@ -17,9 +17,8 @@ let Users = (props) => {
       <div className={s.pages}>
         {pages.map((p) => (
           <span
-            className={props.currentPage === p && s.selectedPage}
+            // className={props.currentPage === p && s.selectedPage}
             onClick={(e) => {
-              debugger;
               props.onPageChanged(p);
             }}
           >
@@ -32,7 +31,7 @@ let Users = (props) => {
         {props.users.map((u) => (
           <div className={s.user__item} key={u.id}>
             <div>
-              <NavLink to={'/profile/' + u.id}>
+              <NavLink to={'profile/' + u.id}>
                 <img
                   src={u.photos.small != null ? u.photos.small : userPhoto}
                   className={s.img}
