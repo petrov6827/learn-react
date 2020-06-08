@@ -27,7 +27,7 @@ class UsersContainer extends React.Component {
   }
 
   onPageChanged = (page) => {
-    this.props.requestUsersThunk(page, this.props.pageSize);
+    this.props.setUsers(page, this.props.pageSize);
     this.props.setCurrentPage(page);
   };
 
@@ -40,7 +40,8 @@ class UsersContainer extends React.Component {
           pageSize={this.props.pageSize}
           currentPage={this.props.currentPage}
           users={this.props.users}
-          onPageChanged={this.props.onPageChanged}
+          onPageChanged={this.onPageChanged}
+          //////onPageChaged?!?!?!?
           followThunk={this.props.followThunk}
           unfollowThunk={this.props.unfollowThunk}
           followingInProgress={this.props.followingInProgress}
