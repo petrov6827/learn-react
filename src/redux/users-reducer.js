@@ -24,10 +24,7 @@ const usersReducer = (state = initialState, action) => {
         ...state,
         users: state.users.map((u) => {
           if (u.id === action.userId) {
-            return {
-              ...u,
-              followed: true,
-            };
+            return {...u, followed: true,};
           }
           return u;
         }),
@@ -38,9 +35,7 @@ const usersReducer = (state = initialState, action) => {
         ...state,
         users: state.users.map((u) => {
           if (u.id === action.userId) {
-            return {
-              ...u,
-              followed: false,
+            return {...u, followed: false,
             };
           }
           return u;
@@ -131,26 +126,22 @@ export const requestUsersThunk = (page, pageSize) => {
   };
 }; //thunk
 
+const followUnfollowFlow = async (dispatch, userId, apiMethod, actionCreator) => {
+  dispatch(toggleFollowingProgress(true, userId));
+  const response = await apiMethod(userId);
+
+  if (response.data.resultCode == 0) {
+    dispatch(followSuccess(userId));
+  }
+  dispatch(toggleFollowingProgress(false, userId));
+};
+
 export const followThunk = (userId) => {
-  return async (dispatch) => {
-    dispatch(toggleFollowingProgress(true, userId));
-    const response = await usersAPI.follow(userId);
-    if (response.data.resultCode === 0) {
-      dispatch(followSucces(userId));
-    }
-    dispatch(toggleFollowingProgress(false, userId));
-  };
+  return async (dispatch) => followUnfollowFlow(dispatch, userId, usersAPI.follow.bind(usersAPI), followSuccess);
 }; //thunk
 
 export const unfollowThunk = (userId) => {
-  return async (dispatch) => {
-    dispatch(toggleFollowingProgress(true, userId));
-    const response = await usersAPI.unfollow(userId);
-    if (response.data.resultCode === 0) {
-      dispatch(unfollowSucces(userId));
-    }
-    dispatch(toggleFollowingProgress(false, userId));
-  };
+  return async (dispatch) => followUnfollowFlow(dispatch, userId, usersAPI.unfollow.bind(usersAPI), unfollowSuccess);
 };
 
 export default usersReducer;
