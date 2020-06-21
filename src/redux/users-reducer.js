@@ -1,4 +1,5 @@
 import { usersAPI } from '../components/api/api';
+import { updateObjectInArray } from '../utils/object-helpers';
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -22,24 +23,26 @@ const usersReducer = (state = initialState, action) => {
     case FOLLOW:
       return {
         ...state,
-        users: state.users.map((u) => {
-          if (u.id === action.userId) {
-            return {...u, followed: true,};
-          }
-          return u;
-        }),
+        users: updateObjectInArray(state.users, action.userId, 'id', {followed: true})
+                // state.users.map((u) => {
+                //           if (u.id === action.userId) {
+                //             return {...u, followed: true,};
+                //           }
+                //           return u;
+                        // }),
       };
 
     case UNFOLLOW:
       return {
         ...state,
-        users: state.users.map((u) => {
-          if (u.id === action.userId) {
-            return {...u, followed: false,
-            };
-          }
-          return u;
-        }),
+        users: updateObjectInArray(state.users, action.userId, 'id', {followed: false})
+          // state.users.map((u) => {
+          //   if (u.id === action.userId) {
+          //     return {...u, followed: false,
+          //     };
+          //   }
+          //   return u;
+          // }),
       };
 
     case SET_USERS: {
@@ -84,11 +87,11 @@ const usersReducer = (state = initialState, action) => {
   }
 };
 
-export const followSucces = (userId) => ({
+export const followSuccess = (userId) => ({
   type: FOLLOW,
   userId,
 });
-export const unfollowSucces = (userId) => ({
+export const unfollowSuccess = (userId) => ({
   type: UNFOLLOW,
   userId,
 });
@@ -130,7 +133,7 @@ const followUnfollowFlow = async (dispatch, userId, apiMethod, actionCreator) =>
   dispatch(toggleFollowingProgress(true, userId));
   const response = await apiMethod(userId);
 
-  if (response.data.resultCode == 0) {
+  if (response.data.resultCode === 0) {
     dispatch(followSuccess(userId));
   }
   dispatch(toggleFollowingProgress(false, userId));

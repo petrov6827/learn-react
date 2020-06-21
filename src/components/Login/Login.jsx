@@ -2,10 +2,7 @@ import React from 'react';
 import s from './login.module.scss';
 import { reduxForm, Field } from 'redux-form';
 import { Textarea } from '../common/FormsControls/FormsControls';
-import {
-  requiredLogin,
-  requiredPassword,
-} from '../../utils/validators/validators';
+import { requiredLogin, requiredPassword } from '../../utils/validators/validators';
 import { connect } from 'react-redux';
 import { login } from '../../redux/auth-reducer';
 import { Redirect } from 'react-router-dom';
