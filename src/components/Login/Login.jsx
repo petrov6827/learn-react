@@ -41,6 +41,9 @@ const LoginForm = (props) => {
       {props.error && <div className={s.form__error}>{props.error}</div>}
       <div>
         <button className={s.button}>Войти</button>
+        {/* <Button variant="contained" color="secondary">
+          Hello World
+        </Button> */}
       </div>
     </form>
   );
