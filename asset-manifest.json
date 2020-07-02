@@ -1,22 +1,26 @@
 {
   "files": {
-    "main.css": "/portfolio/SocialNetwork/index.html/static/css/main.92e6ba96.chunk.css",
-    "main.js": "/portfolio/SocialNetwork/index.html/static/js/main.67525f81.chunk.js",
-    "main.js.map": "/portfolio/SocialNetwork/index.html/static/js/main.67525f81.chunk.js.map",
-    "runtime-main.js": "/portfolio/SocialNetwork/index.html/static/js/runtime-main.0a998b08.js",
-    "runtime-main.js.map": "/portfolio/SocialNetwork/index.html/static/js/runtime-main.0a998b08.js.map",
-    "static/js/2.68f5c581.chunk.js": "/portfolio/SocialNetwork/index.html/static/js/2.68f5c581.chunk.js",
-    "static/js/2.68f5c581.chunk.js.map": "/portfolio/SocialNetwork/index.html/static/js/2.68f5c581.chunk.js.map",
-    "index.html": "/portfolio/SocialNetwork/index.html/index.html",
-    "precache-manifest.4621c4530af3ad880f37c4d2f4f64202.js": "/portfolio/SocialNetwork/index.html/precache-manifest.4621c4530af3ad880f37c4d2f4f64202.js",
-    "service-worker.js": "/portfolio/SocialNetwork/index.html/service-worker.js",
-    "static/css/main.92e6ba96.chunk.css.map": "/portfolio/SocialNetwork/index.html/static/css/main.92e6ba96.chunk.css.map",
-    "static/js/2.68f5c581.chunk.js.LICENSE.txt": "/portfolio/SocialNetwork/index.html/static/js/2.68f5c581.chunk.js.LICENSE.txt"
+    "main.css": "/portfolio/SocialNetwork/static/css/main.92e6ba96.chunk.css",
+    "main.js": "/portfolio/SocialNetwork/static/js/main.05aeca2e.chunk.js",
+    "main.js.map": "/portfolio/SocialNetwork/static/js/main.05aeca2e.chunk.js.map",
+    "runtime-main.js": "/portfolio/SocialNetwork/static/js/runtime-main.fdf2186f.js",
+    "runtime-main.js.map": "/portfolio/SocialNetwork/static/js/runtime-main.fdf2186f.js.map",
+    "static/css/2.b35f93db.chunk.css": "/portfolio/SocialNetwork/static/css/2.b35f93db.chunk.css",
+    "static/js/2.c96bcff1.chunk.js": "/portfolio/SocialNetwork/static/js/2.c96bcff1.chunk.js",
+    "static/js/2.c96bcff1.chunk.js.map": "/portfolio/SocialNetwork/static/js/2.c96bcff1.chunk.js.map",
+    "index.html": "/portfolio/SocialNetwork/index.html",
+    "precache-manifest.faef9a8d544c8d974c1cb321a1092d8c.js": "/portfolio/SocialNetwork/precache-manifest.faef9a8d544c8d974c1cb321a1092d8c.js",
+    "service-worker.js": "/portfolio/SocialNetwork/service-worker.js",
+    "static/css/2.b35f93db.chunk.css.map": "/portfolio/SocialNetwork/static/css/2.b35f93db.chunk.css.map",
+    "static/css/main.92e6ba96.chunk.css.map": "/portfolio/SocialNetwork/static/css/main.92e6ba96.chunk.css.map",
+    "static/js/2.c96bcff1.chunk.js.LICENSE.txt": "/portfolio/SocialNetwork/static/js/2.c96bcff1.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/portfolio/SocialNetwork/static/media/roboto-latin-900-normal.bb1e4dc6.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.0a998b08.js",
-    "static/js/2.68f5c581.chunk.js",
+    "static/js/runtime-main.fdf2186f.js",
+    "static/css/2.b35f93db.chunk.css",
+    "static/js/2.c96bcff1.chunk.js",
     "static/css/main.92e6ba96.chunk.css",
-    "static/js/main.67525f81.chunk.js"
+    "static/js/main.05aeca2e.chunk.js"
   ]
 }
