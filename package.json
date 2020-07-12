@@ -22,7 +22,7 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0"
   },
-  "homepage": "https://learn-react.petrov6827.vercel.app/",
+  "homepage": "https://learn-react-mhlxz30ik.vercel.app",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

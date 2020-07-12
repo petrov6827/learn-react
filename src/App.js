@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import Settings from './components/Settings/Settings';
-import { Route, withRouter, BrowserRouter, HashRouter } from 'react-router-dom';
+import { Route, withRouter, HashRouter } from 'react-router-dom';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login.jsx';
@@ -54,11 +54,11 @@ const AppContainer = compose(
 
 const SamuraiJSApp = (props) => {
   return (
-    <Hashrouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Provider store={store}>
         <AppContainer />  
       </Provider>
-    </Hashrouter>
+    </HashRouter>
   )
 }
 
